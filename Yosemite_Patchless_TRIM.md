@@ -38,11 +38,13 @@ sudo kextcache -u /
 
 ## Even Better Method (No kext-dev-mode required!)
 
-* Download the official [AppleDataSetManagement.kext](http://www72.zippyshare.com/v/BQFjtD3i/file.html) (properly codesigned by Apple).
+* Download the official [AppleDataSetManagement.kext](http://www72.zippyshare.com/v/BQFjtD3i/file.html) (properly codesigned by Apple). Another link to download is here: [http://www.filedropper.com/appledatasetmanagement](http://www.filedropper.com/appledatasetmanagement)
+* Make sure you download the right file. The sha1 sum of the zip file is `1df56eeef3499e22eb5072dc481bce8a3d2413a7`
 * Install it to /System/Library/Extensions:
 ```
 sudo unzip ~/Downloads/AppleDataSetManagement.zip -d /System/Library/Extensions
 sudo touch /System/Library/Extensions
+sudo kextcache -u /
 ```
 * Restart your machine. This is the official method used by "trimforce", so you don't have to worry about nvram (kext-dev-mode), binary or Info.plist patches, software updates removing TRIM support, booting to a gray stop sign error, and so on. Everything is properly codesigned by Apple and permanently enables TRIM via the official method.
 
